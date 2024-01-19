@@ -2,6 +2,7 @@ import React from 'react'
 import SideBar from './Admin/components/SideBar'
 import NavBar from './Admin/components/NavBar'
 import Courses from './Admin/pages/courses'
+import CourseDetail from './Admin/pages/CourseDetail'
 import { Routes, Route } from 'react-router-dom'
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
     <Routes>
     
     <Route path = "/" element = {<Courses/>}/>
-      <Route path = "/courses" element = {<Courses/>}/>
+      <Route path = "/course/:courseId" element = {<CourseDetail/>}/>
     </Routes>
     </div>
     </>

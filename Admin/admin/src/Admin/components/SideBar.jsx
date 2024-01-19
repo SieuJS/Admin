@@ -6,9 +6,9 @@ function SideBar() {
     <>
     <div className="sidebar pe-4 pb-3">
             <nav className="navbar bg-light navbar-light">
-                <a href="index.html" className="navbar-brand mx-4 mb-3">
+                <NavLink to = "/" className="navbar-brand mx-4 mb-3">
                     <h3 className="text-primary"><i className="fa fa-hashtag me-2"></i>DASHMIN</h3>
-                </a>
+                </NavLink>
                 <div className="d-flex align-items-center ms-4 mb-4">
                     <div className="position-relative">
                         <img className="rounded-circle" src="img/user.jpg" alt="" style = {{width : "40px", height : "40px"}}/>

@@ -6,6 +6,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { Button, Stack } from '@mui/material';
 
 import DetailModal from '../components/DetailModal';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -19,6 +20,7 @@ function courses() {
   const [detailCourseId, setDetailCourseId] = useState();
   const handleOpen = () => setShowDetailModal(true);
   const handleClose = () => setShowDetailModal(false);
+  const navigate = useNavigate();
   const columns = [
     { field: '_id', headerName: 'ID', width: 90 },
   
@@ -66,15 +68,18 @@ function courses() {
       sortable: false,
       disableClickEventBubbling: true,
       renderCell: (params) => {
+
+
         const onClick = (e) => {
           const currentRow = params.row;
-          handleOpen();
-          // return alert(JSON.stringify(currentRow, null,4));
+          console.log(currentRow)
+
+          return navigate(`/course/${currentRow._id}`)
         };
         
         return (
           <Stack direction="row" spacing={2}>
-            <Button variant="outlined" color="warning" size="small" onClick={onClick}>Details</Button>
+            <Button variant="outlined" color="warning" size="small" onClick={onClick} >Details</Button>
           </Stack>
         );
     },
